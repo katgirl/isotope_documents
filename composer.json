@@ -17,7 +17,7 @@
     "require":{
         "php":">=5.3.2",
         "contao/core":">=3.2.0",
-        "isotope/isotope-core":">=2.0.0",
+        "isotope/isotope-core":">=2.0.0"
     },
     "extra":{
         "contao": {
