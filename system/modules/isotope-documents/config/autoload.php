@@ -15,7 +15,7 @@
  */
 ClassLoader::addNamespaces(array
 (
-        'KirstenRoschanski',
+  'KirstenRoschanski',
 ));
 
 /**
@@ -23,16 +23,18 @@ ClassLoader::addNamespaces(array
  */
 TemplateLoader::addFiles(array
 (
-	'iso_collection_001'        => 'system/modules/isotope_documents/templates',
-	'iso_collection_002'        => 'system/modules/isotope_documents/templates',
-	'iso_collection_003'        => 'system/modules/isotope_documents/templates',
-	'iso_collection_004'        => 'system/modules/isotope_documents/templates',
-	'iso_collection_005'        => 'system/modules/isotope_documents/templates',
-	'iso_collection_006'        => 'system/modules/isotope_documents/templates',
-	'iso_document_001'          => 'system/modules/isotope_documents/templates',
-	'iso_document_002'          => 'system/modules/isotope_documents/templates',
-	'iso_document_003'          => 'system/modules/isotope_documents/templates',
-	'iso_document_004'          => 'system/modules/isotope_documents/templates',
-	'iso_document_005'          => 'system/modules/isotope_documents/templates',
-	'iso_document_006'          => 'system/modules/isotope_documents/templates',
+  'iso_collection_001'        => 'system/modules/isotope-documents/templates',
+  'iso_collection_002'        => 'system/modules/isotope-documents/templates',
+  'iso_collection_003'        => 'system/modules/isotope-documents/templates',
+  'iso_collection_004'        => 'system/modules/isotope-documents/templates',
+  'iso_collection_005'        => 'system/modules/isotope-documents/templates',
+  'iso_collection_006'        => 'system/modules/isotope-documents/templates',
+  'iso_collection_007'        => 'system/modules/isotope-documents/templates',
+  'iso_collection_008'        => 'system/modules/isotope-documents/templates',
+  'iso_document_001'          => 'system/modules/isotope-documents/templates',
+  'iso_document_002'          => 'system/modules/isotope-documents/templates',
+  'iso_document_003'          => 'system/modules/isotope-documents/templates',
+  'iso_document_004'          => 'system/modules/isotope-documents/templates',
+  'iso_document_005'          => 'system/modules/isotope-documents/templates',
+  'iso_document_006'          => 'system/modules/isotope-documents/templates',
 ));
