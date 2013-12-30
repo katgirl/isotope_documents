@@ -1,0 +1,118 @@
+<table>
+  <tbody>
+    <tr> 
+      <td width="15%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['sku']; ?></strong></td>
+      <td width="50%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['item']; ?></strong></td>
+      <td width="10%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['quantity']; ?></strong></td>
+      <td width="15%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['unitPrice']; ?></strong></td>
+      <td width="10%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['price']; ?></strong></td>                
+    </tr>   
+    <tr>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+    </tr>
+    
+    <?php foreach($this->items as $item): $i=0; ?>
+    <tr class="<?php echo $item['rowClass']; ?>">
+      <td class="col_<?php echo $i++; ?> col_first sku" style="font-size:80%; color:gray"><?php echo $item['sku']; ?></td>
+      <td class="col_<?php echo $i++; ?> col_first name"
+        ><strong><?php echo $item['name']; ?></strong
+        <?php if(!empty($item['options'])): ?>
+        ><ul style="font-size:80%; color:gray;"
+          <?php foreach($item['options'] as $option): ?>
+          ><li><strong><?php echo $option['label']; ?>:</strong> <?php echo $option['value']; ?></li
+          <?php endforeach; ?>
+        ></ul
+        <?php endif; ?>
+        >
+      </td>
+      <td class="col_<?php echo $i++; ?> quantity"><?php echo $item['quantity']; ?> x</td>
+      <td class="col_<?php echo $i++; ?> price"><?php echo $item['price']; ?></td>
+      <td class="col_<?php echo $i++; ?> remove price total"
+        ><span class="subtotal"><?php echo $item['total']; ?></span>
+      </td>
+    </tr>    
+    <tr>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+    </tr>
+    <?php endforeach; ?>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>                
+    </tr>
+    <tr class="foot_0 foot_first subtotal">
+      <?php $i=0; ?>
+      <td class="col_<?php echo $i++; ?> col_first">&nbsp;</td>
+      <td class="col_<?php echo $i++; ?><?php if($this->isNotification) echo ' col_first'; ?> name" colspan="2"><?php echo $GLOBALS['TL_LANG']['MSC']['subTotalLabel']; ?></td>
+      <td class="col_<?php echo $i++; ?> price">&nbsp;</td>
+      <td class="col_<?php echo $i++; ?> price total"><?php echo $this->subtotal; ?></td>
+    </tr>
+    <tr>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+    </tr>  
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>                
+    </tr>  
+    <?php foreach ($this->surcharges as $surcharge): $i=0; ?>
+    <tr class="<?php echo $surcharge['rowClass']; ?>">
+      <td class="col_<?php echo $i++; ?> col_first">&nbsp;</td>
+      <td class="col_<?php echo $i++; ?> col_first name" colspan="2"><?php echo $surcharge['label']; ?></td>
+      <td class="col_<?php echo $i++; ?> price"><?php echo $surcharge['price']; ?></td>
+      <td class="col_<?php echo $i++; ?> price total"><?php echo $surcharge['total_price']; ?></td>
+    </tr>
+    <?php endforeach; ?>
+    <tr>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-bottom: 0.5px solid #000;">&nbsp;</td>
+    </tr>  
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>                
+    </tr>  
+    <tr class="foot_<?php echo count($this->surcharges)+1; ?> foot_last total">
+      <?php $i=0; ?>
+      <td class="col_<?php echo $i++; ?> col_first">&nbsp;</td>
+      <td class="col_<?php echo $i++; ?> col_first name" colspan="2"><strong><?php echo $GLOBALS['TL_LANG']['MSC']['grandTotalLabel']; ?></strong></td>
+      <td class="col_<?php echo $i++; ?> price">&nbsp;</td>
+      <td class="col_<?php echo $i++; ?> price total"><strong><?php echo $this->total; ?></strong></td>
+    </tr>  
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>                
+    </tr>   
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>                
+    </tr> 
+  </tbody>
+</table>
