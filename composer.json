@@ -1,5 +1,5 @@
 {
-    "name":"isotope/isotope_documents",
+    "name":"isotope/isotope-documents",
     "description":"user friendly documents for delivery notes and invoices for Isotope eCommerce 2.X",
     "keywords":["contao", "isotope", "delivery notes", "invoices"],
     "type":"contao-module",
@@ -22,7 +22,7 @@
     "extra":{
         "contao": {
             "sources":{
-                "system/modules/isotope_documents": "system/modules/isotope_documents"
+                "system/modules/isotope-documents": "system/modules/isotope-documents"
             }
         },
         "master": {
