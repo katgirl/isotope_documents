@@ -1,0 +1,261 @@
+<?php
+
+/**
+ * PHP version 5
+ * @copyright  Copyright (C) 2013 Kirsten Roschanski
+ * @author     Kirsten Roschanski <git@kirsten-roschanski.de>
+ * @license    http://opensource.org/licenses/lgpl-3.0.html
+ */
+  use Isotope\Isotope;
+
+  $this->loadLanguageFile('countries');
+  $this->loadLanguageFile('tl_iso_address');
+  $this->loadLanguageFile('tl_iso_config');
+  $this->loadLanguageFile('tl_iso_product_collection');
+  $this->loadLanguageFile('tl_member');
+  include(TL_ROOT . '/system/config/countries.php');    
+  $arrBillingAddress = $this->collection->getBillingAddress();
+  $arrShippingAddress = $this->collection->getShippingAddress();
+  $objConfig = Isotope::getConfig();  
+?>  
+
+<div style="font-size: 72.5%; font-family: Helvetica, sans-serif; float:left;">
+  <table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-left:100px;" >
+    <tr>
+      <td width="60%" colspan="2">&nbsp;</td>
+      <td width="40%"><img src="http://isotopeecommerce.org/files/layout/logo.png" alt="Isotope eCommerce" height="100"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>              
+    </tr> 
+    <tr>
+      <td width="60%"
+      ><span style="font-size: 65%;text-decoration: underline;"><?php 
+          echo $objConfig->company ? $objConfig->company . " · " : ""; 
+          echo $objConfig->firstname . " ";
+          echo $objConfig->lastname . " · ";
+          echo $objConfig->street_1 ? $objConfig->street_1 . " · " : "";
+          echo $objConfig->street_2 ? $objConfig->street_2 . " · " : "";
+          echo $objConfig->street_3 ? $objConfig->street_3 . " · " : "";
+          echo $objConfig->postal . " · ";
+          echo $objConfig->city;
+          echo "</span><br><br>";
+          echo $arrBillingAddress->company ? $arrBillingAddress->company . "<br>" : "";
+          echo $arrBillingAddress->firstname . " "; 
+          echo $arrBillingAddress->lastname . "<br>";
+          echo $arrBillingAddress->street_1 ? $arrBillingAddress->street_1 . "<br>" : "";
+          echo $arrBillingAddress->street_2 ? $arrBillingAddress->street_2 . "<br>" : "";
+          echo $arrBillingAddress->street_3 ? $arrBillingAddress->street_3 . "<br>" : "";
+          echo $arrBillingAddress->postal . " ";
+          echo $arrBillingAddress->city . "<br><br>";
+          echo $GLOBALS['TL_LANG']['CNT'][$arrBillingAddress->country]; 
+        ?>
+      </td>
+      <td width="40%">
+        <table>
+          <tr>
+            <td width="30%">&nbsp;</td>
+            <td width="70%" style="font-size: 70%;"><strong><?php 
+              echo $objConfig->company ? $objConfig->company : ""; 
+              echo "</strong><br>";
+              echo $objConfig->firstname . " " . $objConfig->lastname. "<br>";
+              echo $objConfig->street_1 ? $objConfig->street_1 . "<br>" : ""; 
+              echo $objConfig->street_2 ? $objConfig->street_2 . "<br>" : ""; 
+              echo $objConfig->street_3 ? $objConfig->street_3 . "<br>" : ""; 
+              echo $objConfig->postal . " " . $objConfig->city . "<br>";
+              echo $GLOBALS['TL_LANG']['CNT'][$objConfig->country] . "<br>";
+              echo $GLOBALS['TL_LANG']['tl_iso_config']['phone'][0] . ": " . $objConfig->phone . "<br>";
+              echo $GLOBALS['TL_LANG']['tl_iso_config']['email'][0] . ": " . $objConfig->email . "<br>";
+              echo $GLOBALS['TL_LANG']['isoDocument']['server'][0] . ": " . "https://" . $_SERVER["SERVER_NAME"]; ?>
+            </td>
+          </tr>
+          <tr>        
+            <td>&nbsp;</td>              
+            <td>&nbsp;</td>                      
+          </tr>
+          <tr>        
+            <td>&nbsp;</td>              
+            <td>&nbsp;</td>                      
+          </tr> 
+          <tr>        
+            <td colspan="2"><?php echo $GLOBALS['TL_LANG']['tl_iso_address']['vat_no'][0] . ": " . $arrBillingAddress->vat_no; ?></td>                      
+          </tr>
+          <tr>        
+            <td>&nbsp;</td>              
+            <td>&nbsp;</td>                      
+          </tr>   
+          <tr>
+            <td colspan="2" border="1" style="padding:10px;"><strong
+              >&nbsp;<?php echo $GLOBALS['TL_LANG']['isoDocument']['addressDispatch']; ?>:</strong><br>&nbsp;<?php        
+              echo $arrShippingAddress->company ? $arrShippingAddress->company . "<br>&nbsp;" : "";
+              echo $arrShippingAddress->firstname . " " . $arrShippingAddress->lastname . "<br>&nbsp;";
+              echo $arrShippingAddress->street_1 ? $arrShippingAddress->street_1 . "<br>&nbsp;" : "";
+              echo $arrShippingAddress->street_2 ? $arrShippingAddress->street_2 . "<br>&nbsp;" : "";
+              echo $arrShippingAddress->street_3 ? $arrShippingAddress->street_3 . "<br>&nbsp;" : "";
+              echo $arrShippingAddress->postal . " " . $arrShippingAddress->city . "<br>&nbsp;";
+              echo $GLOBALS['TL_LANG']['CNT'][$arrShippingAddress->country]; ?>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr> 
+    <tr>        
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>                      
+    </tr>
+    <tr>        
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>                      
+    </tr> 
+    <tr>
+      <td><span style="font-size: 100%;font-weight: bold;"><?php echo $this->title; ?></span></td>
+      <td>Seite 1</td>              
+    </tr>  
+  </table>
+
+  <table width="100%" cellspacing="0" cellpadding="0"style="font-size: 60%;">  
+    <tr>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><?php echo $GLOBALS['TL_LANG']['isoDocument']['documentNumber']; ?>:</td>
+      <td align="right"><strong><?php echo $this->collection->document_number; ?></strong></td>              
+      <td>&nbsp;</td>              
+      <td><?php echo $GLOBALS['TL_LANG']['isoDocument']['orderDateLabel']; ?>:</td>              
+      <td align="right"><strong><?php echo date($GLOBALS['TL_CONFIG']['dateFormat'], $this->collection->locked); ?></strong></td>              
+      <td>&nbsp;</td>              
+      <td><?php echo $GLOBALS['TL_LANG']['tl_iso_address']['phone'][0]; ?>:</td>              
+      <td align="right"><strong><?php echo $arrBillingAddress->phone ? : "-"; ?></strong></td>              
+    </tr> 
+    <tr>
+      <td>&nbsp;</td>
+      <td align="right"><strong>&nbsp;</strong></td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td align="right"><strong>&nbsp;</strong></td>              
+      <td>&nbsp;</td>              
+      <td><?php echo $GLOBALS['TL_LANG']['tl_member']['fax'][0]; ?>:</td>              
+      <td align="right"><strong><?php echo $arrBillingAddress->fax ? : "-"; ?></strong></td>              
+    </tr> 
+    <tr>
+      <td>&nbsp;</td>
+      <td align="right"><strong>&nbsp;</strong></td>              
+      <td>&nbsp;</td>              
+      <td><?php echo $GLOBALS['TL_LANG']['tl_iso_product_collection']['date_shipped'][0]; ?>:</td>              
+      <td align="right"><strong><?php echo $this->collection->date_shipped ? date($GLOBALS['TL_CONFIG']['dateFormat'], $this->collection->date_shipped) : "-"; ?></strong></td>              
+      <td>&nbsp;</td>              
+      <td><?php echo $GLOBALS['TL_LANG']['isoDocument']['customerID']; ?>:</td>              
+      <td align="right"><strong><?php echo $arrBillingAddress->id ? : "-"; ?></strong></td>              
+    </tr> 
+    <tr>
+      <td>&nbsp;</td>
+      <td align="right"><strong>&nbsp;</strong></td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td align="right"><strong>&nbsp;</strong></td>              
+      <td>&nbsp;</td>              
+      <td><?php echo $GLOBALS['TL_LANG']['isoDocument']['date']; ?>:</td>              
+      <td align="right"><strong><?php echo date($GLOBALS['TL_CONFIG']['dateFormat']); ?></strong></td>              
+    </tr> 
+    <tr>        
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>                      
+    </tr> 
+    <tr>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+      <td style="border-top: 0.5px solid #000;">&nbsp;</td>
+    </tr>   
+    <tr>  
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>              
+      <td>&nbsp;</td>                      
+    </tr>
+  </table>
+
+  
+  <?php echo $this->products; ?>
+  
+  <table width="100%" cellspacing="0" cellpadding="0">  
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>              
+    </tr> 
+    <tr>        
+      <td colspan="2"><?php 
+        if ($this->collection->notes): 
+          echo $this->collection->notes; 
+        endif; ?>
+      </td>  
+    </tr>
+  </table>
+  <table>  
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>              
+    </tr>
+    <?php if ( $this->collection->getPaymentMethod()->note ): ?>
+    <tr>        
+      <td width="20%"><strong><?php echo $this->collection->getPaymentMethod()->label; ?>:</strong></td>          
+      <td width="80%"><?php echo $this->collection->getPaymentMethod()->note; ?></td>  
+    </tr>
+    <?php endif; ?>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>              
+    </tr>
+    <?php if ( $this->collection->getShippingMethod()->note ): ?>
+    <tr>        
+      <td width="20%"><strong><?php echo $this->collection->getShippingMethod()->label; ?>:</strong></td>          
+      <td width="80%"><?php echo $this->collection->getShippingMethod()->note; ?></td>  
+    </tr>
+    <?php endif; ?>
+  </table>
+</div>
+
+<div style="border-top: 1px solid #000; width: 100%; font-size: 50.5%; font-family: Helvetica, sans-serif;"><br>
+  <table> 
+    <tr>
+      <td width="30%" align="left"><?php 
+        echo $GLOBALS['TL_LANG']['tl_iso_config']['managing_directors'][0] . "<br>" . $objConfig->managing_directors; ?>
+      </td>
+      <td width="40%" align="center"><?php
+          echo $objConfig->bank_name . "<br>";
+          echo $GLOBALS['TL_LANG']['tl_iso_config']['bank_id'][0] . ": " . $objConfig->bank_id . "<br>";
+          echo $GLOBALS['TL_LANG']['tl_iso_config']['account_number'][0] . ": " . $objConfig->account_number . "<br>";
+          echo $GLOBALS['TL_LANG']['tl_iso_config']['iban'][0] . ": " . $objConfig->iban . "<br>";
+          echo $GLOBALS['TL_LANG']['tl_iso_config']['bic'][0] . ": " . $objConfig->bic; ?>       
+      </td>        
+      <td width="30%" align="right"><?php 
+          echo $GLOBALS['TL_LANG']['tl_iso_config']['register'][0] . ": " . $objConfig->register . "<br>";
+          echo $GLOBALS['TL_LANG']['tl_iso_config']['tax_number'][0] . ": " . $objConfig->tax_number . "<br>";
+          echo $GLOBALS['TL_LANG']['tl_iso_config']['vat_no'][0] . ": " . $objConfig->vat_no; ?>
+      </td>            
+    </tr>
+  </table>  
+</div>
+

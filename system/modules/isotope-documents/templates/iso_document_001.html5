@@ -19,7 +19,7 @@
 <div style="font-size: 72.5%; font-family: Helvetica, sans-serif; float:left;">
   <table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-left:100px;" >
   <tr>
-    <td width="60%" colspan="2">&nbsp;</td>
+    <td width="60%">&nbsp;</td>
     <td width="40%"><img src="http://isotopeecommerce.org/files/layout/logo.png" alt="Isotope eCommerce" height="100"></td>
   </tr>
   <tr>
@@ -27,7 +27,7 @@
     <td>&nbsp;</td>              
   </tr> 
   <tr>
-    <td width="57%"
+    <td width="60%"
     ><span style="font-size: 65%;text-decoration: underline;"><?php 
         echo $objConfig->company ? $objConfig->company . " · " : ""; 
         echo $objConfig->firstname . " ";
@@ -46,25 +46,14 @@
         echo $arrBillingAddress->street_3 ? $arrBillingAddress->street_3 . "<br>" : "";
         echo $arrBillingAddress->postal . " ";
         echo $arrBillingAddress->city . "<br><br>";
-        echo $GLOBALS['TL_LANG']['CNT'][$arrBillingAddress->country]; 
+        echo $GLOBALS['TL_LANG']['CNT'][$arrBillingAddress->country];  
       ?><br><br><br><br><br><br    
       ><span style="font-size: 100%;font-weight: bold;"><?php echo $this->title; ?></span><br><br
       ><?php echo $GLOBALS['TL_LANG']['isoDocument']['customerID']; ?>: <?php echo $pid > 0 ? $pid : "-"; ?><br
       ><?php echo $GLOBALS['TL_LANG']['isoDocument']['orderDateLabel'] . ": " . date($GLOBALS['TL_CONFIG']['dateFormat'], $this->collection->locked); ?><br
       ><?php echo $GLOBALS['TL_LANG']['isoDocument']['documentNumber'] . ": " . $this->collection->document_number; ?><br
-      ><?php echo $GLOBALS['TL_LANG']['isoDocument']['date']; ?>: <?php echo date($GLOBALS['TL_CONFIG']['dateFormat']); ?><br><br><br
-      ><table>
-        <tr>        
-          <td width="30%"><strong><?php echo $GLOBALS['TL_LANG']['MSC']['payment_method']; ?>:</strong></td>          
-          <td width="70%"><?php echo $this->collection->getPaymentMethod()->label; ?></td>  
-        </tr>
-        <tr>        
-          <td width="30%"><strong><?php echo $GLOBALS['TL_LANG']['MSC']['shipping_method']; ?>:</strong></td>          
-          <td width="70%"><?php echo $this->collection->getShippingMethod()->label; ?></td>  
-        </tr>
-      </table>
+      ><?php echo $GLOBALS['TL_LANG']['isoDocument']['date']; ?>: <?php echo date($GLOBALS['TL_CONFIG']['dateFormat']); ?>
     </td>
-    <td width="3%" style="border-left: 1px solid #000;"></td>
     <td width="40%"><strong><?php 
         echo $objConfig->company ? $objConfig->company : ""; 
         echo "</strong><br>";
