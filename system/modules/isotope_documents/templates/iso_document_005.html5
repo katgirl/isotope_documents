@@ -133,7 +133,7 @@
       <td align="right"><strong><?php echo $this->collection->document_number; ?></strong></td>              
       <td>&nbsp;</td>              
       <td><?php echo $GLOBALS['TL_LANG']['isoDocument']['orderDateLabel']; ?>:</td>              
-      <td align="right"><strong><?php echo date($GLOBALS['TL_CONFIG']['dateFormat'], $this->collection->locked); ?></strong></td>              
+      <td align="right"><strong><?php $this->collection->locked ? date($GLOBALS['TL_CONFIG']['dateFormat'], $this->collection->locked) : date($GLOBALS['TL_CONFIG']['dateFormat']); ?></strong></td>              
       <td>&nbsp;</td>              
       <td><?php echo $GLOBALS['TL_LANG']['tl_iso_address']['phone'][0]; ?>:</td>              
       <td align="right"><strong><?php echo $arrBillingAddress->phone ? : "-"; ?></strong></td>              

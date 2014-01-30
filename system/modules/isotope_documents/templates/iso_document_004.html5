@@ -65,8 +65,8 @@
     <td width="3%" style="border-left: 1px solid #000;"></td>
     <td width="40%"><span style="font-size: 100%;font-weight: bold;"><?php echo $this->title; ?></span><br><br
       ><?php echo $GLOBALS['TL_LANG']['isoDocument']['customerID']; ?>: <?php echo $pid > 0 ? $pid : "-"; ?><br
-      ><?php echo $GLOBALS['TL_LANG']['isoDocument']['orderDateLabel'] . ": " . date($GLOBALS['TL_CONFIG']['dateFormat'], $this->collection->locked); ?><br
-      ><?php echo $GLOBALS['TL_LANG']['isoDocument']['documentNumber'] . ": " . $this->collection->document_number; ?><br
+      ><?php echo $GLOBALS['TL_LANG']['isoDocument']['orderDateLabel']; ?>: <?php echo $this->collection->locked ? date($GLOBALS['TL_CONFIG']['dateFormat'], $this->collection->locked) : date($GLOBALS['TL_CONFIG']['dateFormat']); ?><br
+      ><?php echo $GLOBALS['TL_LANG']['isoDocument']['documentNumber']; ?>: <?php echo $this->collection->document_number; ?><br
       ><?php echo $GLOBALS['TL_LANG']['isoDocument']['date']; ?>: <?php echo date($GLOBALS['TL_CONFIG']['dateFormat']); ?>
     </td>
   </tr> 
