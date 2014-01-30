@@ -1,11 +1,14 @@
 <?php
 
-/**
- * PHP version 5
- * @copyright  Copyright (C) 2013 Kirsten Roschanski
- * @author     Kirsten Roschanski <git@kirsten-roschanski.de>
- * @license    http://opensource.org/licenses/lgpl-3.0.html
- */
+ /**
+  * PHP version 5
+  * @copyright  Copyright (C) 2013-2014 Kirsten Roschanski
+  * @author     Kirsten Roschanski <git@kirsten-roschanski.de>
+  * @license    http://opensource.org/licenses/lgpl-3.0.html
+  * @package    IsotopeDocuments 
+  * @filesource https://github.com/katgirl/isotope_documents
+  */
+ 
   use Isotope\Isotope;
 
   $this->loadLanguageFile('countries');

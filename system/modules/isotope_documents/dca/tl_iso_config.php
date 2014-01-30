@@ -2,7 +2,7 @@
 
 /**
  * PHP version 5
- * @copyright  Copyright (C) 2013 Kirsten Roschanski
+ * @copyright  Copyright (C) 2013-2014 Kirsten Roschanski
  * @author     Kirsten Roschanski <git@kirsten-roschanski.de>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  * @package    IsotopeDocuments 
