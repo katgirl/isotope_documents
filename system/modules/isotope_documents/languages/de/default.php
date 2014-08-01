@@ -28,6 +28,7 @@ $GLOBALS['TL_LANG']['isoDocument']['quantity'] = 'Menge';
 $GLOBALS['TL_LANG']['isoDocument']['unitPrice'] = 'Einzelpreis';
 $GLOBALS['TL_LANG']['isoDocument']['price'] = 'Preis';
 $GLOBALS['TL_LANG']['isoDocument']['orderNote'] = 'Hinweise';
+$GLOBALS['TL_LANG']['isoDocument']['documentNumber'] ='Auftragsnummer';
 $GLOBALS['TL_LANG']['isoDocument']['addressDispatch'] = 'Versandadresse';
 $GLOBALS['TL_LANG']['isoDocument']['note'] = 'Notiz';
 $GLOBALS['TL_LANG']['isoDocument']['shippingAddress'] = 'Lieferadresse';
