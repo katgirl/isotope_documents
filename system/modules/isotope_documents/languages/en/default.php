@@ -30,6 +30,7 @@ $GLOBALS['TL_LANG']['isoDocument']['price'] = 'Price';
 $GLOBALS['TL_LANG']['isoDocument']['orderNote'] = 'Order Note';
 $GLOBALS['TL_LANG']['isoDocument']['addressDispatch'] = 'Adress for Dispatch';
 $GLOBALS['TL_LANG']['isoDocument']['note'] = 'Note';
+$GLOBALS['TL_LANG']['isoDocument']['documentNumber'] ='Document number';
 $GLOBALS['TL_LANG']['isoDocument']['shippingAddress'] = 'Shipping address';
 $GLOBALS['TL_LANG']['isoDocument']['packing'] = 'Packaging unit';
 $GLOBALS['TL_LANG']['isoDocument']['sum'] = 'Sum';
