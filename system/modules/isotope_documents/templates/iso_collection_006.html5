@@ -19,9 +19,9 @@
         ><span class="description" ><?php echo $item['product']->description; ?></span
         <?php if(!empty($item['options'])): ?>
         ><ul style="font-size:80%; color:gray;"
-          <?php foreach($item['options'] as $option): ?>
-          ><li><strong><?php echo $option['label']; ?>:</strong> <?php echo $option['value']; ?></li
-          <?php endforeach; ?>
+          <?php if(!empty($item['configuration'])): ?><?php foreach($item['configuration'] as $value): ?>
+          ><li><strong><?php echo $value['label']; ?>:</strong> <?php echo (string) $value; ?></li
+          <?php endforeach; ?><?php endif; ?>
         ></ul
         <?php endif; ?>
         ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['sku'] . ":"; ?></strong> <?php echo $item['sku']; ?>
