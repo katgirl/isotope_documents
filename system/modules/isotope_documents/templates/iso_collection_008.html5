@@ -27,11 +27,9 @@ use Isotope\Model\TaxClass;
             ><span class="sku"><?php echo $item['sku']; ?></span><br
             ><span class="name"><?php echo $item['name']; ?></span><br
             ><span class="description" ><?php echo strip_tags($item['product']->description); ?></span><br
-            <?php if(!empty($item['options'])): ?>
-              <?php foreach($item['options'] as $option): ?>
-                ><span class="opt_<?php echo $o++; ?>"><?php echo $option['label']; ?>: <?php echo $option['value']; ?></span><br
-              <?php endforeach; ?>
-            <?php endif; ?>            
+            <?php if(!empty($item['configuration'])): ?><?php foreach($item['configuration'] as $value): ?>
+            ><span class="opt_<?php echo $o++; ?>"><?php echo $value['label']; ?>: <?php echo (string) $value; ?></span><br
+            <?php endforeach; ?><?php endif; ?>
             ><span class="tax"><?php echo TaxClass::findByPk($item['tax_id'])->getLabel(); ?></span><br>
         </td>
         <td class="col_<?php echo $i++; ?> price"><?php echo $item['price']; ?></td>
