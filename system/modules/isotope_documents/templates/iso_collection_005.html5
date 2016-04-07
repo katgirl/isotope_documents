@@ -1,10 +1,10 @@
 <table>
   <tbody>
-    <tr> 
+    <tr>
       <td width="10%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['position']; ?></strong></td>
       <td width="10%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['quantity']; ?></strong></td>
-      <td width="80%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['item']; ?></strong></td>             
-    </tr>   
+      <td width="80%" ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['item']; ?></strong></td>
+    </tr>
     <tr>
       <td style="border-top: 0.5px solid #000;">&nbsp;</td>
       <td style="border-top: 0.5px solid #000;">&nbsp;</td>
@@ -16,32 +16,32 @@
       <td class="col_<?php echo $i++; ?> quantity"><?php echo $item['quantity']; ?></td>
       <td class="col_<?php echo $i++; ?> col_first name"
         ><strong><?php echo $item['name']; ?></strong
-        <?php if(!empty($item['options'])): ?>
+        <?php if(!empty($item['configuration'])): ?>
         ><ul style="font-size:80%; color:gray;"
-          <?php foreach($item['options'] as $option): ?>
-          ><li><strong><?php echo $option['label']; ?>:</strong> <?php echo $option['value']; ?></li
+          <?php foreach($item['configuration'] as $option): ?>
+          ><li><strong><?php echo $option['label']; ?>:</strong> <?php echo (string) $option; ?></li
           <?php endforeach; ?>
         ></ul
         <?php endif; ?>
         ><strong><?php echo $GLOBALS['TL_LANG']['isoDocument']['sku'] . ":"; ?></strong> <?php echo $item['sku']; ?>
       </td>
-    </tr>  
-    <?php if($intItems + 1 != $count ): ?>  
+    </tr>
+    <?php if($intItems + 1 != $count ): ?>
     <tr>
       <td style="border-top: 0.5px solid #000;">&nbsp;</td>
       <td style="border-top: 0.5px solid #000;">&nbsp;</td>
       <td style="border-top: 0.5px solid #000;">&nbsp;</td>
     </tr>
-    <?php endif; endforeach; ?> 
+    <?php endif; endforeach; ?>
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>              
-    </tr>  
+      <td>&nbsp;</td>
+    </tr>
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>          
-    </tr>    
+      <td>&nbsp;</td>
+    </tr>
   </tbody>
 </table>
